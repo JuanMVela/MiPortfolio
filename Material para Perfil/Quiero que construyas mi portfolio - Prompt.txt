@@ -1,0 +1,83 @@
+Quiero que construyas mi portfolio web personal como desarrolladora/or. Leé todo antes de empezar.
+
+## Reglas técnicas
+- Solo HTML y CSS. JavaScript: nada, o como máximo unas pocas líneas si algo es imposible sin JS (preferí siempre la solución en CSS).
+- Estructura de archivos: index.html, css/styles.css, carpeta img/ para las imágenes y carpeta cv/ para el PDF.
+- Sitio de una sola página con secciones ancladas (#inicio, #sobre-mi, #conocimientos, #proyectos, #redes, #contacto).
+- Responsive: tiene que verse bien en celular, tablet y escritorio (mobile first, flexbox/grid).
+- Menú hamburguesa en celular hecho solo con CSS (truco del checkbox + label).
+- HTML semántico (header, nav, main, section, footer), textos alternativos en todas las imágenes y buen contraste de color.
+- Formulario de contacto sin JS: usá el atributo action apuntando a Formspree (https://formspree.io/f/TU_ID) con method="POST". Dejá TU_ID como placeholder para que yo lo reemplace.
+- Imágenes: todavía no las tengo. Usá placeholders con nombres claros (img/foto-perfil.jpg) y un fondo de color mientras no existan.
+- Código comentado y ordenado por secciones, así lo puedo editar yo.
+
+## Estética: "Arcane serie Jinx y joker de Heath Ledge"
+Estetica y temática estilo Arcane personaje Jinx y joker de Heath Ledger con su gama de colores
+
+## Paleta de colores
+Usá EXCLUSIVAMENTE los colores de la imagen que te adjunto. Extraé de 4 a 6 colores, definilos como variables CSS en :root (--color-fondo, --color-texto, --color-acento, etc.) y usalos en todo el sitio. Asegurate de que el texto tenga buen contraste sobre el fondo.
+
+## Secciones (en este orden)
+
+### 1. Menú
+Fijo arriba. Logo o nombre "Nombre Apellido" a la izquierda y enlaces a: Inicio, Sobre mí, Conocimientos, Proyectos, Redes, Contacto.
+
+### 2. Presentación inicial con foto
+- Foto de perfil (img/foto-perfil.jpg) con un marco decorativo estilo "estética provista".
+- Nombre: Nombre Apellido
+- Título: Desarrollador C# Desarrolladora Backend .NET (a completar)
+- Frase: "(a completar breve descripción suya, nomás de 2 oraciones)"
+- Dos botones: "Ver proyectos" (ancla a #proyectos) y "Descargar CV" (enlace a cv/tu cv.pdf con atributo download).
+
+### 3. Información general (Sobre mí)
+Texto:
+"Descripción suya"
+
+Debajo, datos rápidos en tarjetas o lista:
+- Ubicación :   (a completar)
+- Idiomas :  (a completar)
+- Educación :   (a completar)
+- Experiencia actual :   (a completar)
+
+Incluí también un timeline breve de experiencia:
+- 2024 – hoy :  (a completar)
+
+### 4. Conocimientos
+Agrupados por categoría, con íconos o etiquetas estilizadas. NO uses barras de porcentaje.
+(a completar con lenguajes, frameworks, etc, que sepan)
+
+### 5. Proyectos
+3 Tarjetas con imagen, título, género, motor, contexto, descripción corta, mi rol y botón ver que abre github en una pestaña nueva. Los tres primeros van más grandes como destacados.
+En este caso cada tarjeta contenga un carrusel de máximo 3 imágenes a elección. 
+
+Destacados:
+1. Titulo:  (a completar)
+Descripción:  (a completar)
+Rol:  (a completar)
+Link:  (a completar)
+
+Otros proyectos:
+1. Título:  (a completar)
+Descripción:  (a completar)
+Rol:  (a completar)
+Link (a completar)
+
+
+### 6. Redes
+Íconos grandes con enlace (abrir en pestaña nueva). Usá íconos SVG inline, sin librerías con JS:
+- LinkedIn: (a completar)
+- github: (a completar)
+- Email: (a completar)
+- WhatsApp: botón con enlace https://wa.me/NUMERO (dejá NUMERO como placeholder; el número NO debe aparecer escrito en el sitio)
+
+### 7. Formulario de contacto
+Campos: nombre, email, asunto y mensaje, todos con label y validación nativa de HTML (required, type="email"). Botón "Enviar" con el estilo del sitio. Envío por Formspree como se indicó arriba.
+
+### Footer
+"© 2026 Nombre y Apellido" y un pequeño detalle decorativo (por ejemplo, a completar).
+
+## Entrega
+Verifica la carpeta (a completar) para obtener todas las imágenes y data para el portafolio
+Generá todos los archivos, verificá que el HTML sea válido, que los enlaces funcionen y que el sitio se vea bien en un ancho de 375px y de 1440px. Al final, decime qué placeholders tengo que reemplazar." 
+
+ Seo.pdf

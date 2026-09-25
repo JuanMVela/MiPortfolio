@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="arcane">
+<head>
+  <!-- SEO Técnico: Configuración de caracteres y compatibilidad móvil -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <!-- Title: Único, claro, con keyword principal + especialidad y nombre (UTN FRGP) -->
+  <title id="seo-title">Portfolio de Desarrollador Web | Full Stack & .NET</title>
+
+  <!-- Description: Atractiva y orientada a la acción para resultados de búsqueda -->
+  <meta name="description" id="seo-description" content="Portfolio profesional de Desarrollador Web y Full Stack con C# .NET, React, Node.js, MongoDB y experiencia técnica en ingeniería CAD (AutoCAD, SolidWorks)." />
+
+  <!-- Keywords: Referencia temática acorde a formación y perfil profesional -->
+  <meta name="keywords" content="desarrollador web, portfolio, .NET, C#, full stack, react, nodejs, mongodb, UTN FRGP, autocad, solidworks, cadworx, SQL Server" />
+
+  <!-- Robots: Directiva para permitir indexación y rastreo de enlaces -->
+  <meta name="robots" content="index, follow" />
+
+  <!-- Autor y canonical URL -->
+  <meta name="author" content="Desarrollador Web - UTN FRGP" />
+  <link rel="canonical" href="https://mi-portfolio-dev.vercel.app/" />
+
+  <!-- Open Graph para redes sociales -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_AR" />
+  <meta property="og:site_name" content="Portfolio de Desarrollador Web" />
+  <meta property="og:title" content="Portfolio de Desarrollador Web | Full Stack & .NET" />
+  <meta property="og:description" content="Portfolio profesional con proyectos, stack tecnológico C# .NET, Full Stack MERN y contacto directo." />
+  <meta property="og:image" content="https://mi-portfolio-dev.vercel.app/og-preview.png" />
+  <meta property="og:url" content="https://mi-portfolio-dev.vercel.app/" />
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Portfolio de Desarrollador Web | Full Stack & .NET" />
+  <meta name="twitter:description" content="Portfolio profesional con proyectos, skills y contacto." />
+
+  <!-- Google Fonts: Inter & Space Grotesk -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
+
+  <!-- Hoja de Estilos -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Datos Estructurados JSON-LD (Schema.org) para SEO Avanzado -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Desarrollador Web",
+    "jobTitle": "Desarrollador Full Stack & Proyectista CAD",
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "Universidad Tecnológica Nacional - Facultad Regional General Pacheco (UTN FRGP)"
+    },
+    "knowsAbout": [
+      "C#",
+      ".NET",
+      "React",
+      "JavaScript",
+      "Node.js",
+      "MongoDB",
+      "AutoCAD",
+      "SolidWorks",
+      "CADWorx",
+      "SQL Server",
+      "SEO & Accesibilidad"
+    ],
+    "description": "Estudiante de Tecnicatura Universitaria en Programación (UTN FRGP), Desarrollador Full Stack y Proyectista/Cadista en empresa de ingeniería."
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ========================================================= -->
+  <!-- HEADER & NAVEGACIÓN SEMÁNTICA -->
+  <!-- ========================================================= -->
+  <header class="site-header" id="header">
+    <div class="container header-container">
+      <a href="#hero" class="brand-logo" aria-label="Volver al inicio del portfolio">
+        <span class="brand-bracket">&lt;</span><span class="brand-name">DevPortfolio</span><span class="brand-dot">.</span><span class="brand-bracket">/&gt;</span>
+      </a>
+
+      <!-- Navegación principal con textos accesibles y enlaces ancla -->
+      <nav class="main-nav" id="main-nav" aria-label="Navegación principal del sitio">
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="#sobre-mi" class="nav-link" data-i18n="nav.about">Sobre mí</a>
+          </li>
+          <li class="nav-item">
+            <a href="#skills" class="nav-link" data-i18n="nav.skills">Skills</a>
+          </li>
+          <li class="nav-item">
+            <a href="#proyectos" class="nav-link" data-i18n="nav.projects">Proyectos</a>
+          </li>
+          <li class="nav-item">
+            <a href="#contacto" class="nav-link" data-i18n="nav.contact">Contacto</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Selector de Idioma y Selector de Tema -->
+      <div class="theme-control">
+        <!-- Botón Selector de Idioma (Español / Inglés) -->
+        <button id="lang-toggle" class="lang-toggle-btn" type="button" aria-label="Cambiar idioma entre Español e Inglés">
+          <span class="lang-flag" aria-hidden="true">🌐</span>
+          <span class="lang-current" id="lang-current-label">ES</span>
+          <span class="lang-divider">/</span>
+          <span class="lang-target" id="lang-target-label">EN</span>
+        </button>
+
+        <!-- Selector de Tema (Arcane Jinx vs The Dark Knight Joker) -->
+        <button id="theme-toggle" class="theme-toggle-btn" type="button" aria-label="Cambiar entre tema Arcane y Joker">
+          <span class="theme-badge arcane-badge" id="arcane-tag">
+            <span class="theme-icon">⚡</span> Arcane
+          </span>
+          <span class="theme-switch-slider"></span>
+          <span class="theme-badge joker-badge" id="joker-tag">
+            <span class="theme-icon">🃏</span> Joker
+          </span>
+        </button>
+
+        <!-- Botón menú móvil (hamburguesa) -->
+        <button id="mobile-menu-btn" class="mobile-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Abrir menú de navegación">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================= -->
+  <!-- CONTENIDO PRINCIPAL (<main>) -->
+  <!-- ========================================================= -->
+  <main id="main-content">
+
+    <!-- SECCIÓN HERO (PORTADA) -->
+    <section class="hero-section" id="hero" aria-label="Presentación y bienvenida">
+      <div class="container hero-grid">
+        <div class="hero-text-content">
+          <!-- Etiqueta H1 Única (Requisito fundamental de SEO) -->
+          <h1 class="hero-title" data-i18n="hero.title">
+            Portfolio de <span class="highlight-text">Desarrollador Web</span>
+          </h1>
+
+          <p class="hero-subtitle" data-i18n="hero.subtitle">
+            Estudiante de la <strong>Tecnicatura Universitaria en Programación (UTN FRGP)</strong>, desarrollador <strong>Full Stack</strong> (.NET, React, Node.js, SQL &amp; MongoDB) y proyectista/cadista en empresa de ingeniería (AutoCAD, CADWorx, SolidWorks).
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#proyectos" class="btn btn-primary" aria-label="Ver lista de proyectos desarrollados" data-i18n="hero.btn_projects">
+              Ver proyectos destacados
+            </a>
+            <a href="#contacto" class="btn btn-secondary" aria-label="Ir al formulario de contacto" data-i18n="hero.btn_contact">
+              Contactar ahora
+            </a>
+          </div>
+
+          <!-- Enlace descriptivo solicitado en la guía SEO -->
+          <div class="hero-github-direct">
+            <a href="https://github.com/usuario" target="_blank" rel="noopener noreferrer" class="link-descriptivo" aria-label="Visitar el perfil y repositorios en GitHub (abre en pestaña nueva)">
+              <svg class="icon-svg" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="currentColor">
+                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+              </svg>
+              <span data-i18n="hero.link_github">Ver proyectos en GitHub</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Cuadro para fotografía de perfil con altura coincidente con los textos -->
+        <div class="hero-visual">
+          <div class="profile-card">
+            <div class="profile-frame">
+              <!-- Reemplazá 'src' por tu foto personal (ej: foto-perfil.jpg o tu URL) -->
+              <img 
+                src="foto-perfil.jpg" 
+                alt="Fotografía de perfil de Desarrollador Web" 
+                class="profile-img" 
+                onerror="this.onerror=null; this.src='avatar-default.svg';" 
+              />
+              <div class="profile-status-badge">
+                <span class="status-dot"></span>
+                <span data-i18n="hero.status">Disponible</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- SECCIÓN: SOBRE MÍ (Semántica según guía UTN) -->
+    <!-- ========================================================= -->
+    <section class="section" id="sobre-mi" aria-labelledby="heading-sobre-mi">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag" data-i18n="about.tag">Conoceme más</span>
+          <h2 id="heading-sobre-mi" class="section-title" data-i18n="about.title">Sobre mí</h2>
+          <div class="section-line"></div>
+        </div>
+
+        <div class="about-grid">
+          <!-- 1. Formación Universitaria -->
+          <div class="about-card">
+            <div class="card-icon">🎓</div>
+            <h3 class="about-card-title" data-i18n="about.card1_title">Formación Académica</h3>
+            <p data-i18n="about.card1_desc">
+              Curso la <strong>Tecnicatura Universitaria en Programación</strong> en la <strong>Facultad Regional General Pacheco (UTN FRGP)</strong>, afianzando conocimientos en la materia <strong>Programación III</strong>.
+            </p>
+            <ul class="check-list">
+              <li data-i18n="about.card1_item1">Algoritmos y estructuras de datos</li>
+              <li data-i18n="about.card1_item2">Programación Orientada a Objetos (POO) en C# .NET</li>
+              <li data-i18n="about.card1_item3">Arquitectura en capas, bases relacionales y SEO técnico</li>
+            </ul>
+          </div>
+
+          <!-- 2. Formación Full Stack (1 año) -->
+          <div class="about-card">
+            <div class="card-icon">🚀</div>
+            <h3 class="about-card-title" data-i18n="about.card2_title">Formación Full Stack (1 Año)</h3>
+            <p data-i18n="about.card2_desc">
+              Completé un curso intensivo de <strong>desarrollo web Full Stack</strong> de un año de duración, dominando el ecosistema moderno de frontend, backend y bases de datos.
+            </p>
+            <ul class="check-list">
+              <li data-i18n="about.card2_item1">Frontend: HTML5, CSS3, Sass, JavaScript y React</li>
+              <li data-i18n="about.card2_item2">Backend: Node.js, Express y diseño de APIs RESTful</li>
+              <li data-i18n="about.card2_item3">Bases de datos NoSQL: MongoDB &amp; modelado de datos</li>
+            </ul>
+          </div>
+
+          <!-- 3. Experiencia Profesional (Ingeniería & CAD) -->
+          <div class="about-card">
+            <div class="card-icon">📐</div>
+            <h3 class="about-card-title" data-i18n="about.card3_title">Experiencia Profesional (Ingeniería)</h3>
+            <p data-i18n="about.card3_desc">
+              Trabajo en una <strong>empresa de ingeniería</strong> desempeñándome como <strong>proyectista y cadista</strong>, aplicando rigor técnico, modelado 3D y diseño de precisión.
+            </p>
+            <ul class="check-list">
+              <li data-i18n="about.card3_item1">Planimetría técnica y layouts con AutoCAD</li>
+              <li data-i18n="about.card3_item2">Ruteo de cañerías y plantas de procesos con CADWorx</li>
+              <li data-i18n="about.card3_item3">Modelado 3D de piezas y ensamblajes mecánicos con SolidWorks</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- SECCIÓN: SKILLS (Semántica según guía UTN) -->
+    <!-- ========================================================= -->
+    <section class="section alt-bg" id="skills" aria-labelledby="heading-skills">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag" data-i18n="skills.tag">Competencias</span>
+          <h2 id="heading-skills" class="section-title" data-i18n="skills.title">Habilidades y Tecnologías</h2>
+          <div class="section-line"></div>
+        </div>
+
+        <div class="skills-grid">
+          <!-- 1. Backend & Bases de Datos -->
+          <article class="skill-category-card">
+            <div class="skill-cat-header">
+              <span class="skill-badge-icon">⚙️</span>
+              <h3 class="skill-cat-title" data-i18n="skills.cat1_title">Backend &amp; .NET</h3>
+            </div>
+            <p class="skill-cat-desc" data-i18n="skills.cat1_desc">Lógica de servidor, servicios web y gestión de bases de datos relacionales y NoSQL.</p>
+            <ul class="skill-tags" aria-label="Tecnologías de backend">
+              <li class="skill-tag">C#</li>
+              <li class="skill-tag">.NET 8 / Core</li>
+              <li class="skill-tag">ASP.NET Web API</li>
+              <li class="skill-tag">Entity Framework Core</li>
+              <li class="skill-tag">SQL Server</li>
+              <li class="skill-tag">Node.js</li>
+              <li class="skill-tag">MongoDB</li>
+              <li class="skill-tag">Arquitectura en Capas</li>
+            </ul>
+          </article>
+
+          <!-- 2. Frontend & Full Stack -->
+          <article class="skill-category-card">
+            <div class="skill-cat-header">
+              <span class="skill-badge-icon">🌐</span>
+              <h3 class="skill-cat-title" data-i18n="skills.cat2_title">Frontend &amp; Full Stack</h3>
+            </div>
+            <p class="skill-cat-desc" data-i18n="skills.cat2_desc">Interfaces modernas, reactivas, maquetación avanzada y optimización SEO.</p>
+            <ul class="skill-tags" aria-label="Tecnologías de frontend">
+              <li class="skill-tag">React</li>
+              <li class="skill-tag">JavaScript (ES6+)</li>
+              <li class="skill-tag">HTML5 Semántico</li>
+              <li class="skill-tag">CSS3 (Grid &amp; Flexbox)</li>
+              <li class="skill-tag">Sass (SCSS)</li>
+              <li class="skill-tag">Diseño Responsive</li>
+              <li class="skill-tag">SEO On-Page</li>
+              <li class="skill-tag">Accesibilidad Web (a11y)</li>
+            </ul>
+          </article>
+
+          <!-- 3. Ingeniería & Software CAD -->
+          <article class="skill-category-card">
+            <div class="skill-cat-header">
+              <span class="skill-badge-icon">📐</span>
+              <h3 class="skill-cat-title" data-i18n="skills.cat3_title">Ingeniería &amp; Diseño CAD</h3>
+            </div>
+            <p class="skill-cat-desc" data-i18n="skills.cat3_desc">Proyección técnica, documentación de ingeniería y modelado computacional 3D.</p>
+            <ul class="skill-tags" aria-label="Herramientas de ingeniería y CAD">
+              <li class="skill-tag">AutoCAD</li>
+              <li class="skill-tag">CADWorx</li>
+              <li class="skill-tag">SolidWorks</li>
+              <li class="skill-tag">Modelado 3D</li>
+              <li class="skill-tag">Planimetría Técnica</li>
+              <li class="skill-tag">Diseño de Tuberías</li>
+              <li class="skill-tag">Isométricos</li>
+            </ul>
+          </article>
+
+          <!-- 4. Herramientas & DevOps -->
+          <article class="skill-category-card">
+            <div class="skill-cat-header">
+              <span class="skill-badge-icon">🛠️</span>
+              <h3 class="skill-cat-title" data-i18n="skills.cat4_title">Herramientas &amp; DevOps</h3>
+            </div>
+            <p class="skill-cat-desc" data-i18n="skills.cat4_desc">Control de versiones colaborativo, entornos de desarrollo y testing de APIs.</p>
+            <ul class="skill-tags" aria-label="Herramientas de trabajo">
+              <li class="skill-tag">Git</li>
+              <li class="skill-tag">GitHub</li>
+              <li class="skill-tag">Visual Studio 2022</li>
+              <li class="skill-tag">VS Code</li>
+              <li class="skill-tag">Postman</li>
+              <li class="skill-tag">SQL Server Mgmt Studio</li>
+              <li class="skill-tag">Scrum / Metodologías Ágiles</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- SECCIÓN: PROYECTOS (Semántica según guía UTN) -->
+    <!-- ========================================================= -->
+    <section class="section" id="proyectos" aria-labelledby="heading-proyectos">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag" data-i18n="projects.tag">Portfolio práctico</span>
+          <h2 id="heading-proyectos" class="section-title" data-i18n="projects.title">Proyectos Destacados</h2>
+          <div class="section-line"></div>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Proyecto 1: Sistema de Gestión con C# y SQL -->
+          <article class="project-card">
+            <div class="project-header">
+              <div class="project-category" data-i18n="projects.card1_cat">Aplicación Web .NET</div>
+              <h3 class="project-title" data-i18n="projects.card1_title">Sistema de Gestión de Alumnos y Cursos</h3>
+            </div>
+            <div class="project-body">
+              <p class="project-description" data-i18n="projects.card1_desc">
+                Solución integral desarrollada en C# .NET y SQL Server para administración académica. Implementa operaciones CRUD, validaciones de reglas de negocio, autenticación por roles y reportes dinámicos.
+              </p>
+              <div class="project-tech-stack">
+                <span class="tech-pill">C# .NET</span>
+                <span class="tech-pill">ASP.NET Core</span>
+                <span class="tech-pill">SQL Server</span>
+                <span class="tech-pill">EF Core</span>
+              </div>
+            </div>
+            <div class="project-footer">
+              <a href="https://github.com/usuario/gestion-alumnos-dotnet" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Ver el código fuente del Sistema de Gestión de Alumnos en GitHub">
+                <span data-i18n="projects.btn_code">Ver código en GitHub</span>
+                <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+              <a href="https://demo-gestion-alumnos.vercel.app" target="_blank" rel="noopener noreferrer" class="project-link secondary" aria-label="Ver demostración en vivo del Sistema de Gestión de Alumnos">
+                <span data-i18n="projects.btn_demo">Ver demo en vivo</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Proyecto 2: API RESTful de Comercio Electrónico -->
+          <article class="project-card">
+            <div class="project-header">
+              <div class="project-category" data-i18n="projects.card2_cat">Backend API REST</div>
+              <h3 class="project-title" data-i18n="projects.card2_title">E-Commerce Web API RESTful</h3>
+            </div>
+            <div class="project-body">
+              <p class="project-description" data-i18n="projects.card2_desc">
+                API para catálogo de productos, carrito de compras y pasarela de órdenes. Diseñada con arquitectura en capas (Domain, Data, Services, Controllers), paginación, DTOs y documentación interactiva con Swagger.
+              </p>
+              <div class="project-tech-stack">
+                <span class="tech-pill">ASP.NET Web API</span>
+                <span class="tech-pill">C#</span>
+                <span class="tech-pill">Node.js</span>
+                <span class="tech-pill">MongoDB</span>
+              </div>
+            </div>
+            <div class="project-footer">
+              <a href="https://github.com/usuario/ecommerce-webapi" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Ver el repositorio de la API de E-Commerce en GitHub">
+                <span data-i18n="projects.btn_code">Ver código en GitHub</span>
+                <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+              <a href="https://ecommerce-api.demo.dev/swagger" target="_blank" rel="noopener noreferrer" class="project-link secondary" aria-label="Ver documentación interactiva Swagger de la API">
+                <span data-i18n="projects.btn_swagger">Ver Swagger Docs</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Proyecto 3: Template Web SEO Friendly -->
+          <article class="project-card">
+            <div class="project-header">
+              <div class="project-category" data-i18n="projects.card3_cat">Frontend &amp; Accesibilidad</div>
+              <h3 class="project-title" data-i18n="projects.card3_title">Portfolio Web Multilingüe &amp; SEO</h3>
+            </div>
+            <div class="project-body">
+              <p class="project-description" data-i18n="projects.card3_desc">
+                Sitio web estructurado según las directivas de SEO de la UTN FRGP. Integra metadatos completos, etiquetas semánticas, accesibilidad a11y, selector de idioma (ES/EN) y temas duales (Arcane y Joker).
+              </p>
+              <div class="project-tech-stack">
+                <span class="tech-pill">React / Vanilla JS</span>
+                <span class="tech-pill">CSS Variables</span>
+                <span class="tech-pill">i18n Multilingüe</span>
+                <span class="tech-pill">SEO On-Page</span>
+              </div>
+            </div>
+            <div class="project-footer">
+              <a href="https://github.com/usuario/portfolio-utn-frgp" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Ver el repositorio de este Portfolio en GitHub">
+                <span data-i18n="projects.btn_code">Ver código en GitHub</span>
+                <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+              <a href="#hero" class="project-link secondary" aria-label="Explorar la versión interactiva de esta misma página">
+                <span data-i18n="projects.btn_current">Ver demo actual</span>
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- SECCIÓN: CONTACTO (Semántica según guía UTN) -->
+    <!-- ========================================================= -->
+    <section class="section alt-bg" id="contacto" aria-labelledby="heading-contacto">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag" data-i18n="contact.tag">Conectemos</span>
+          <h2 id="heading-contacto" class="section-title" data-i18n="contact.title">Contacto</h2>
+          <div class="section-line"></div>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-info">
+            <h3 class="contact-info-title" data-i18n="contact.info_title">¿Tenés una propuesta o proyecto?</h3>
+            <p data-i18n="contact.info_desc">
+              Actualmente estoy abierto a oportunidades profesionales en desarrollo <strong>.NET</strong>, <strong>Full Stack</strong> o proyectos vinculados a <strong>ingeniería y CAD</strong>. No dudes en escribirme para colaborar.
+            </p>
+
+            <ul class="contact-links-list">
+              <!-- WhatsApp Directo -->
+              <li>
+                <a href="https://wa.me/5491112345678" target="_blank" rel="noopener noreferrer" class="contact-channel" aria-label="Enviar un mensaje directo de WhatsApp (abre en pestaña nueva)">
+                  <span class="channel-icon wa-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+                      <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+                    </svg>
+                  </span>
+                  <div>
+                    <strong data-i18n="contact.wa_title">WhatsApp</strong>
+                    <p data-i18n="contact.wa_desc">+54 9 11 1234-5678 (Mensaje directo)</p>
+                  </div>
+                </a>
+              </li>
+
+              <!-- Email -->
+              <li>
+                <a href="mailto:contacto.programador@ejemplo.com" class="contact-channel" aria-label="Enviar un correo electrónico a contacto.programador@ejemplo.com">
+                  <span class="channel-icon">✉️</span>
+                  <div>
+                    <strong data-i18n="contact.email_title">Email Directo</strong>
+                    <p>contacto.programador@ejemplo.com</p>
+                  </div>
+                </a>
+              </li>
+
+              <!-- GitHub -->
+              <li>
+                <a href="https://github.com/usuario" target="_blank" rel="noopener noreferrer" class="contact-channel" aria-label="Ver el perfil de GitHub del desarrollador (abre en pestaña nueva)">
+                  <span class="channel-icon">🐙</span>
+                  <div>
+                    <strong>GitHub</strong>
+                    <p>github.com/usuario</p>
+                  </div>
+                </a>
+              </li>
+
+              <!-- LinkedIn -->
+              <li>
+                <a href="https://linkedin.com/in/usuario" target="_blank" rel="noopener noreferrer" class="contact-channel" aria-label="Ver el perfil profesional en LinkedIn (abre en pestaña nueva)">
+                  <span class="channel-icon">💼</span>
+                  <div>
+                    <strong>LinkedIn</strong>
+                    <p>linkedin.com/in/usuario</p>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Formulario accesible con validaciones -->
+          <div class="contact-form-wrapper">
+            <form id="contact-form" class="contact-form" action="#" method="POST" novalidate>
+              <div class="form-group">
+                <label for="name" class="form-label" data-i18n="form.name_label">Nombre y Apellido *</label>
+                <input type="text" id="name" name="name" class="form-input" placeholder="Ej: Lucas Romero" required aria-required="true" data-i18n-placeholder="form.name_placeholder" />
+              </div>
+
+              <div class="form-group">
+                <label for="email" class="form-label" data-i18n="form.email_label">Correo Electrónico *</label>
+                <input type="email" id="email" name="email" class="form-input" placeholder="Ej: lucas@empresa.com" required aria-required="true" data-i18n-placeholder="form.email_placeholder" />
+              </div>
+
+              <div class="form-group">
+                <label for="subject" class="form-label" data-i18n="form.subject_label">Asunto *</label>
+                <input type="text" id="subject" name="subject" class="form-input" placeholder="Ej: Propuesta laboral / Proyecto Full Stack" required aria-required="true" data-i18n-placeholder="form.subject_placeholder" />
+              </div>
+
+              <div class="form-group">
+                <label for="message" class="form-label" data-i18n="form.message_label">Mensaje *</label>
+                <textarea id="message" name="message" class="form-textarea" rows="4" placeholder="Escribí aquí los detalles de tu consulta..." required aria-required="true" data-i18n-placeholder="form.message_placeholder"></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary submit-btn">
+                <span data-i18n="form.submit_btn">Enviar mensaje</span>
+                <span class="btn-arrow">→</span>
+              </button>
+
+              <div id="form-feedback" class="form-feedback" role="alert" aria-live="polite"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================================= -->
+  <!-- FOOTER SEMÁNTICO (Semántica según guía UTN) -->
+  <!-- ========================================================= -->
+  <footer class="site-footer" id="footer">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <a href="#hero" class="brand-logo" aria-label="Volver arriba">
+          <span class="brand-bracket">&lt;</span><span class="brand-name">DevPortfolio</span><span class="brand-bracket">/&gt;</span>
+        </a>
+        <p class="footer-copy" data-i18n="footer.copy">
+          Tecnicatura Universitaria en Programación — <strong>UTN FRGP</strong> (Programación III).
+        </p>
+      </div>
+
+      <nav class="footer-nav" aria-label="Enlaces rápidos del pie de página">
+        <a href="#sobre-mi" class="footer-link" data-i18n="nav.about">Sobre mí</a>
+        <a href="#skills" class="footer-link" data-i18n="nav.skills">Skills</a>
+        <a href="#proyectos" class="footer-link" data-i18n="nav.projects">Proyectos</a>
+        <a href="#contacto" class="footer-link" data-i18n="nav.contact">Contacto</a>
+        <a href="https://github.com/usuario" target="_blank" rel="noopener noreferrer" class="footer-link external" aria-label="Ver proyectos en GitHub (abre en pestaña nueva)" data-i18n="hero.link_github">Ver proyectos en GitHub</a>
+      </nav>
+
+      <div class="footer-bottom">
+        <p data-i18n="footer.bottom">© 2026 Desarrollador Web. Todos los derechos reservados. Optimizado para SEO &amp; Accesibilidad.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script interactivo -->
+  <script src="script.js"></script>
+</body>
+</html>

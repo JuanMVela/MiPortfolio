@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 420" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg-grad-p" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#140d24"/>
+      <stop offset="50%" stop-color="#1f1438"/>
+      <stop offset="100%" stop-color="#0b0716"/>
+    </linearGradient>
+    <linearGradient id="neon-ring-p" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff0099"/>
+      <stop offset="100%" stop-color="#00d4ff"/>
+    </linearGradient>
+    <linearGradient id="body-grad-p" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#9d74e8"/>
+      <stop offset="100%" stop-color="#4d2f8a"/>
+    </linearGradient>
+    <filter id="glow-p" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Fondo sutil con gradiente -->
+  <rect width="320" height="420" fill="url(#bg-grad-p)"/>
+
+  <!-- Anillos concéntricos de ambientación tecnológica -->
+  <circle cx="160" cy="180" r="140" fill="none" stroke="url(#neon-ring-p)" stroke-width="2" opacity="0.3" stroke-dasharray="6 6"/>
+  <circle cx="160" cy="180" r="120" fill="none" stroke="#6c5d7c" stroke-width="1" opacity="0.2"/>
+
+  <!-- Resplandor central -->
+  <circle cx="160" cy="160" r="95" fill="#ff0099" opacity="0.09" filter="url(#glow-p)"/>
+
+  <!-- Silueta del Desarrollador (Cuerpo / Torso) -->
+  <path d="M45 420 C45 325 95 285 160 285 C225 285 275 325 275 420 Z" fill="url(#body-grad-p)" opacity="0.95"/>
+  <path d="M125 287 L160 335 L195 287 Z" fill="#140d24" opacity="0.6"/>
+
+  <!-- Cuello -->
+  <rect x="142" y="230" width="36" height="58" rx="8" fill="#e0cbb2"/>
+
+  <!-- Cabeza / Rostro -->
+  <circle cx="160" cy="175" r="58" fill="#edd6bf"/>
+
+  <!-- Cabello moderno -->
+  <path d="M102 170 C101 125 125 105 160 105 C195 105 219 125 218 170 C205 152 188 142 160 142 C132 142 115 152 102 170 Z" fill="#2d1d44"/>
+  <path d="M102 170 C98 185 101 198 104 206 C107 188 111 178 115 170 Z" fill="#2d1d44"/>
+  <path d="M218 170 C222 185 219 198 216 206 C213 188 209 178 205 170 Z" fill="#2d1d44"/>
+
+  <!-- Auriculares / Headset de Desarrollador -->
+  <path d="M98 175 C96 118 224 118 222 175" fill="none" stroke="url(#neon-ring-p)" stroke-width="6" stroke-linecap="round"/>
+  <rect x="90" y="165" width="16" height="34" rx="8" fill="#ff0099" filter="url(#glow-p)"/>
+  <rect x="214" y="165" width="16" height="34" rx="8" fill="#00d4ff" filter="url(#glow-p)"/>
+
+  <!-- Anteojos tecnológicos -->
+  <rect x="122" y="165" width="32" height="20" rx="4" fill="none" stroke="#2d1d44" stroke-width="3"/>
+  <rect x="166" y="165" width="32" height="20" rx="4" fill="none" stroke="#2d1d44" stroke-width="3"/>
+  <line x1="154" y1="175" x2="166" y2="175" stroke="#2d1d44" stroke-width="3"/>
+  <line x1="126" y1="170" x2="146" y2="170" stroke="url(#neon-ring-p)" stroke-width="2" opacity="0.8"/>
+  <line x1="170" y1="170" x2="190" y2="170" stroke="url(#neon-ring-p)" stroke-width="2" opacity="0.8"/>
+
+  <!-- Sonrisa sutil -->
+  <path d="M148 206 Q160 216 172 206" fill="none" stroke="#a3785b" stroke-width="2.5" stroke-linecap="round"/>
+</svg>
