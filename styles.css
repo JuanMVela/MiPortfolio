@@ -14,11 +14,11 @@ html[data-theme="arcane"] {
   --bg-card-hover: rgba(41, 26, 78, 0.85);
   --bg-alt: #100a1f;
 
-  --accent-primary: #ff0099;          /* Magenta Neón Jinx */
+  --accent-primary: #ff0099; /* Magenta Neón Jinx */
   --accent-primary-hover: #ff33b3;
   --accent-glow: rgba(255, 0, 153, 0.38);
-  --accent-secondary: #00d4ff;        /* Shimmer / Zaun Blue */
-  --accent-tertiary: #7d2ae8;         /* Violeta Neón */
+  --accent-secondary: #00d4ff; /* Shimmer / Zaun Blue */
+  --accent-tertiary: #7d2ae8; /* Violeta Neón */
 
   --text-main: #f5f2fb;
   --text-muted: #a69bb8;
@@ -37,7 +37,11 @@ html[data-theme="arcane"] {
   --btn-gradient: linear-gradient(135deg, #ff0099 0%, #8514e8 100%);
   --btn-gradient-hover: linear-gradient(135deg, #ff33b3 0%, #9e36ff 100%);
 
-  --hero-glow: radial-gradient(circle at 50% 30%, rgba(255, 0, 153, 0.15) 0%, rgba(13, 7, 23, 0) 70%);
+  --hero-glow: radial-gradient(
+    circle at 50% 30%,
+    rgba(255, 0, 153, 0.15) 0%,
+    rgba(13, 7, 23, 0) 70%
+  );
   --theme-name: "Arcane (Jinx)";
 }
 
@@ -49,14 +53,14 @@ html[data-theme="joker"] {
   --bg-card-hover: rgba(38, 29, 52, 0.88);
   --bg-alt: #0e0d14;
 
-  --accent-primary: #b5121f;          /* Carmesí Siniestro / Sonrisa */
+  --accent-primary: #b5121f; /* Carmesí Siniestro / Sonrisa */
   --accent-primary-hover: #d61827;
   --accent-glow: rgba(181, 18, 31, 0.42);
-  --accent-secondary: #6e3fa3;        /* Púrpura de traje Arkham */
-  --accent-tertiary: #52633d;         /* Verde chaleco Joker / Grunge */
+  --accent-secondary: #6e3fa3; /* Púrpura de traje Arkham */
+  --accent-tertiary: #52633d; /* Verde chaleco Joker / Grunge */
 
   --text-main: #eceff2;
-  --text-muted: #9aa8b2;              /* Gris pizarra / maquillaje */
+  --text-muted: #9aa8b2; /* Gris pizarra / maquillaje */
   --text-dim: #67747e;
 
   --border-subtle: rgba(181, 18, 31, 0.22);
@@ -66,20 +70,26 @@ html[data-theme="joker"] {
   --badge-bg: rgba(181, 18, 31, 0.15);
   --badge-text: #e63946;
 
-  --nav-bg: rgba(10, 10, 13, 0.90);
+  --nav-bg: rgba(10, 10, 13, 0.9);
   --glass-blur: blur(14px);
 
   --btn-gradient: linear-gradient(135deg, #b5121f 0%, #582b8a 100%);
   --btn-gradient-hover: linear-gradient(135deg, #d61827 0%, #7037b0 100%);
 
-  --hero-glow: radial-gradient(circle at 50% 30%, rgba(181, 18, 31, 0.15) 0%, rgba(10, 10, 13, 0) 70%);
+  --hero-glow: radial-gradient(
+    circle at 50% 30%,
+    rgba(181, 18, 31, 0.15) 0%,
+    rgba(10, 10, 13, 0) 70%
+  );
   --theme-name: "The Joker (Dark Knight)";
 }
 
 /* ==========================================================================
    RESET & TIPOGRAFÍA BASE
    ========================================================================== */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -91,11 +101,17 @@ html {
 }
 
 body {
-  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-family:
+    "Plus Jakarta Sans",
+    system-ui,
+    -apple-system,
+    sans-serif;
   background-color: var(--bg-primary);
   color: var(--text-main);
   line-height: 1.65;
-  transition: background-color 0.4s ease, color 0.4s ease;
+  transition:
+    background-color 0.4s ease,
+    color 0.4s ease;
   overflow-x: hidden;
   position: relative;
   min-height: 100vh;
@@ -114,8 +130,13 @@ body::before {
   transition: background 0.5s ease;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Space Grotesk', sans-serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Space Grotesk", sans-serif;
   color: var(--text-main);
   line-height: 1.25;
 }
@@ -123,10 +144,13 @@ h1, h2, h3, h4, h5, h6 {
 a {
   color: var(--accent-primary);
   text-decoration: none;
-  transition: color 0.25s ease, opacity 0.25s ease;
+  transition:
+    color 0.25s ease,
+    opacity 0.25s ease;
 }
 
-a:hover, a:focus-visible {
+a:hover,
+a:focus-visible {
   color: var(--accent-primary-hover);
 }
 
@@ -139,7 +163,8 @@ ul {
   list-style: none;
 }
 
-img, svg {
+img,
+svg {
   display: block;
   max-width: 100%;
 }
@@ -168,7 +193,9 @@ img, svg {
   backdrop-filter: var(--glass-blur);
   -webkit-backdrop-filter: var(--glass-blur);
   border-bottom: 1px solid var(--border-subtle);
-  transition: background 0.3s ease, border-color 0.3s ease;
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease;
 }
 
 .header-container {
@@ -179,7 +206,7 @@ img, svg {
 }
 
 .brand-logo {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: "Space Grotesk", sans-serif;
   font-size: 1.35rem;
   font-weight: 700;
   color: var(--text-main);
@@ -247,46 +274,64 @@ img, svg {
   gap: 1rem;
 }
 
-.theme-toggle-btn {
-  display: flex;
+/* Selector de tema: fondo neutro y una única opción resaltada. */
+#theme-toggle {
+  display: inline-flex;
   align-items: center;
+  gap: 4px;
+  padding: 4px;
   background: rgba(0, 0, 0, 0.35);
   border: 1px solid var(--border-card);
   border-radius: 9999px;
-  padding: 0.25rem 0.35rem;
   cursor: pointer;
-  position: relative;
-  transition: border-color 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+  flex-shrink: 0;
 }
-
-.theme-toggle-btn:hover {
-  border-color: var(--accent-primary);
-  box-shadow: 0 0 12px var(--accent-glow);
-}
-
-.theme-badge {
-  display: flex;
+#theme-toggle:hover { border-color: var(--accent-primary); }
+#theme-toggle .theme-badge {
+  display: inline-flex;
   align-items: center;
-  gap: 0.35rem;
-  padding: 0.35rem 0.75rem;
+  gap: 5px;
+  padding: 5px 9px;
+  white-space: nowrap;
   font-size: 0.8rem;
   font-weight: 600;
+  line-height: 1.2;
   border-radius: 9999px;
+  border: 1px solid transparent;
+  background: transparent;
   color: var(--text-muted);
-  transition: all 0.3s ease;
-  z-index: 2;
+  box-shadow: none;
+  transition: background 0.2s ease, color 0.2s ease;
 }
-
-html[data-theme="arcane"] .arcane-badge {
-  background: var(--btn-gradient);
-  color: #ffffff;
-  box-shadow: 0 0 10px rgba(255, 0, 153, 0.5);
+#theme-toggle img.theme-icon {
+  display: block;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  max-width: 18px;
+  max-height: 18px;
+  flex: 0 0 18px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  filter: grayscale(1);
+  opacity: 0.55;
 }
-
-html[data-theme="joker"] .joker-badge {
+#theme-toggle .theme-check { visibility: hidden; font-size: 11px; }
+html[data-theme="arcane"] #theme-toggle .arcane-badge,
+html[data-theme="joker"] #theme-toggle .joker-badge {
   background: var(--btn-gradient);
-  color: #ffffff;
-  box-shadow: 0 0 10px rgba(181, 18, 31, 0.6);
+  border-color: var(--accent-primary);
+  color: #fff;
+}
+html[data-theme="arcane"] #theme-toggle .arcane-badge img,
+html[data-theme="joker"] #theme-toggle .joker-badge img {
+  filter: none;
+  opacity: 1;
+}
+html[data-theme="arcane"] #theme-toggle .arcane-badge .theme-check,
+html[data-theme="joker"] #theme-toggle .joker-badge .theme-check {
+  visibility: visible;
 }
 
 /* Selector de idioma (Español / Inglés) */
@@ -344,7 +389,9 @@ html[data-theme="joker"] .joker-badge {
   width: 24px;
   height: 2px;
   background: var(--text-main);
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
   border-radius: 2px;
 }
 
@@ -517,7 +564,7 @@ html[data-theme="joker"] .joker-badge {
 .profile-card {
   position: relative;
   width: 100%;
-  max-width: 320px;
+  max-width: 240px;
   height: 100%;
   display: flex;
   align-items: center;
@@ -529,8 +576,8 @@ html[data-theme="joker"] .joker-badge {
   position: relative;
   width: 100%;
   height: 100%;
-  min-height: 380px;
-  max-height: 440px;
+  min-height: 285px;
+  max-height: 330px;
   aspect-ratio: 3 / 4;
   background: var(--bg-card);
   backdrop-filter: var(--glass-blur);
@@ -542,7 +589,10 @@ html[data-theme="joker"] .joker-badge {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
 }
 
 .profile-frame:hover {
@@ -652,7 +702,9 @@ html[data-theme="joker"] .joker-badge {
   border: 1px solid var(--border-card);
   border-radius: 12px;
   padding: 2rem;
-  transition: transform 0.3s ease, border-color 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease;
 }
 
 .about-card:hover {
@@ -698,11 +750,19 @@ html[data-theme="joker"] .joker-badge {
 
 .highlighted-about {
   border-color: var(--border-active);
-  background: linear-gradient(180deg, var(--bg-card) 0%, rgba(255, 0, 153, 0.05) 100%);
+  background: linear-gradient(
+    180deg,
+    var(--bg-card) 0%,
+    rgba(255, 0, 153, 0.05) 100%
+  );
 }
 
 html[data-theme="joker"] .highlighted-about {
-  background: linear-gradient(180deg, var(--bg-card) 0%, rgba(181, 18, 31, 0.06) 100%);
+  background: linear-gradient(
+    180deg,
+    var(--bg-card) 0%,
+    rgba(181, 18, 31, 0.06) 100%
+  );
 }
 
 .about-note {
@@ -725,7 +785,9 @@ html[data-theme="joker"] .highlighted-about {
   border: 1px solid var(--border-card);
   border-radius: 12px;
   padding: 2rem;
-  transition: transform 0.3s ease, border-color 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease;
 }
 
 .skill-category-card:hover {
@@ -794,7 +856,10 @@ html[data-theme="joker"] .highlighted-about {
   padding: 2rem;
   display: flex;
   flex-direction: column;
-  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .project-card:hover {
@@ -868,7 +933,9 @@ html[data-theme="joker"] .highlighted-about {
   font-size: 0.9rem;
   font-weight: 600;
   color: var(--accent-primary);
-  transition: color 0.2s ease, transform 0.2s ease;
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
 }
 
 .project-link:hover {
@@ -921,7 +988,9 @@ html[data-theme="joker"] .highlighted-about {
   border: 1px solid var(--border-card);
   border-radius: 10px;
   color: var(--text-main);
-  transition: transform 0.25s ease, border-color 0.25s ease;
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease;
 }
 
 .contact-channel:hover {
@@ -994,7 +1063,9 @@ html[data-theme="joker"] .highlighted-about {
   color: var(--text-main);
   font-family: inherit;
   font-size: 0.95rem;
-  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 .form-input:focus,
@@ -1162,38 +1233,186 @@ html[data-theme="joker"] .site-footer {
 
 @media (max-width: 480px) {
   .profile-card {
-    max-width: 220px;
+    max-width: 165px;
   }
 }
 
-
-
 /* Galería compartida por todas las tarjetas. */
-.project-card { min-width: 0; overflow: hidden; }
-.project-gallery { margin: -2rem -2rem 1.5rem; background: var(--bg-secondary); }
-.gallery-placeholder { aspect-ratio: 16/10; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .65rem; padding: 1rem; color: var(--text-muted); text-align: center; }
-.gallery-placeholder span { font-size: 2.5rem; color: var(--accent-primary); }
-.gallery-placeholder p { font-size: .85rem; }
-.gallery-slide { margin: 0; }
-.gallery-image-button { display: block; width: 100%; padding: 0; border: 0; background: transparent; cursor: zoom-in; }
-.gallery-slide img { display: block; width: 100%; aspect-ratio: 16/10; object-fit: contain; }
-.gallery-slide figcaption { padding: .65rem 1rem; color: var(--text-muted); font-size: .8rem; }
-.gallery-controls { display: flex; justify-content: center; align-items: center; gap: .75rem; padding: .5rem 1rem 1rem; }
-.gallery-controls button, .dialog-close { border: 1px solid var(--border-card); background: var(--bg-card); color: var(--text-main); border-radius: 6px; min-width: 36px; min-height: 36px; cursor: pointer; }
-.gallery-dots { display: flex; gap: .3rem; }
-.gallery-dots button { min-width: 28px; min-height: 28px; border: 0; background: transparent; }
-.gallery-dots button::after { content: ""; display: block; margin: auto; width: 7px; height: 7px; border-radius: 50%; background: var(--text-muted); }
-.gallery-dots button[aria-current="true"]::after { background: var(--accent-primary); }
-.gallery-count { font-size: .8rem; color: var(--text-muted); }
-[hidden] { display: none !important; }
-button:focus-visible { outline: 2px solid var(--accent-primary); outline-offset: 3px; }
-#image-dialog { margin: auto; width: min(1100px, 94vw); max-height: 94vh; padding: 1rem; background: var(--bg-secondary); color: var(--text-main); border: 1px solid var(--border-active); border-radius: 12px; }
-#image-dialog::backdrop { background: rgba(0,0,0,.85); }
-#image-dialog img { display: block; max-width: 100%; max-height: 75vh; margin: 1rem auto; object-fit: contain; }
-.dialog-close { display: block; margin-left: auto; padding: .4rem .8rem; }
-.lang-toggle-btn:disabled { opacity: .5; cursor: not-allowed; }
+.project-card {
+  min-width: 0;
+  overflow: hidden;
+}
+.project-gallery {
+  margin: -2rem -2rem 1.5rem;
+  background: var(--bg-secondary);
+}
+.gallery-placeholder {
+  aspect-ratio: 16/10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  padding: 1rem;
+  color: var(--text-muted);
+  text-align: center;
+}
+.gallery-placeholder span {
+  font-size: 2.5rem;
+  color: var(--accent-primary);
+}
+.gallery-placeholder p {
+  font-size: 0.85rem;
+}
+.gallery-slide {
+  margin: 0;
+}
+.gallery-image-button {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: zoom-in;
+}
+.gallery-slide img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16/10;
+  object-fit: contain;
+}
+.gallery-slide figcaption {
+  padding: 0.65rem 1rem;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+.gallery-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 1rem 1rem;
+}
+.gallery-controls button,
+.dialog-close {
+  border: 1px solid var(--border-card);
+  background: var(--bg-card);
+  color: var(--text-main);
+  border-radius: 6px;
+  min-width: 36px;
+  min-height: 36px;
+  cursor: pointer;
+}
+[hidden] {
+  display: none !important;
+}
+button:focus-visible {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 3px;
+}
+#image-dialog {
+  margin: auto;
+  width: min(1100px, 94vw);
+  max-height: 94vh;
+  padding: 1rem;
+  background: var(--bg-secondary);
+  color: var(--text-main);
+  border: 1px solid var(--border-active);
+  border-radius: 12px;
+}
+#image-dialog::backdrop {
+  background: rgba(0, 0, 0, 0.85);
+}
+#image-dialog img {
+  display: block;
+  max-width: 100%;
+  max-height: 75vh;
+  margin: 1rem auto;
+  object-fit: contain;
+}
+.dialog-close {
+  display: block;
+  margin-left: auto;
+  padding: 0.4rem 0.8rem;
+}
+.lang-toggle-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
 @media (max-width: 480px) {
-  .projects-grid, .about-grid, .skills-grid { grid-template-columns: minmax(0, 1fr); }
-  .header-container { flex-wrap: wrap; gap: .6rem; }
-  .theme-control { flex-wrap: wrap; }
+  .projects-grid,
+  .about-grid,
+  .skills-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .header-container {
+    flex-wrap: wrap;
+    gap: 0.6rem;
+  }
+  .theme-control {
+    flex-wrap: wrap;
+  }
+}
+
+/* Foto de perfil: dimensiones reducidas un 25%, centrada junto al texto. */
+.profile-card {
+  height: auto;
+}
+.hero-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.profile-frame {
+  height: auto;
+}
+@media (max-width: 480px) {
+  .profile-frame {
+    min-height: 0;
+  }
+}
+
+/* Foto circular y centrada */
+.profile-card {
+  width: 220px;
+  max-width: 100%;
+  height: auto;
+  padding-bottom: 45px; /* Espacio para “Disponible” */
+}
+
+.profile-frame {
+  width: 100%;
+  height: auto;
+  min-height: 0;
+  max-height: none;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  overflow: visible;
+}
+
+/* Recortar únicamente la imagen */
+.profile-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  border-radius: 50%;
+}
+
+/* Evitar que la foto sobresalga al pasar el mouse */
+.profile-frame:hover .profile-img {
+  transform: none;
+}
+
+/* Etiqueta debajo del círculo */
+.profile-status-badge {
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+/* Si agregaste la capa de color */
+.profile-frame::after {
+  border-radius: 50%;
 }

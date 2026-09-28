@@ -12,7 +12,84 @@
 // DICCIONARIO DE INTERNACIONALIZACIÓN (i18n: ES / EN)
 // =========================================================
 const TRANSLATIONS = {
-
+  "en": {
+    "nav.about": "About me",
+    "nav.skills": "Skills",
+    "nav.projects": "Projects",
+    "nav.contact": "Contact",
+    "hero.title": "Hi, I’m <br><span class=\"highlight-text\">Juan Manuel</span>",
+    "hero.subtitle": "I work as a mechanical drafter and designer at an engineering company and I am currently studying for a <strong>University Technical Degree in Programming at UTN FRGP</strong>. My professional experience focuses on design and technical documentation. I am now building on that background by learning programming and developing academic projects, seeking to broaden my knowledge and grow professionally.",
+    "hero.btn_projects": "View featured projects",
+    "hero.btn_contact": "Get in touch",
+    "hero.link_github": "View projects on GitHub",
+    "hero.status": "Available",
+    "about.tag": "Get to know me",
+    "about.title": "About me",
+    "about.card1_title": "Education",
+    "about.card1_desc": "I am currently studying for a <strong>University Technical Degree in Programming</strong> at <strong>Universidad Tecnológica Nacional, General Pacheco Regional Faculty (UTN FRGP)</strong>, developing programming and database skills through practical projects.",
+    "about.card1_item1": "Algorithms and data structures",
+    "about.card1_item2": "Object-oriented programming (OOP) in C# .NET",
+    "about.card1_item3": "Layered architecture, relational databases and technical SEO",
+    "about.card3_title": "Professional Experience (Engineering)",
+    "about.card3_desc": "I work as a <strong>designer and CAD drafter</strong> at an <strong>engineering company</strong>, producing technical documentation with organization and attention to detail, as well as 3D modeling and design.",
+    "about.card3_item1": "General arrangement, section and detail drawings with AutoCAD",
+    "about.card3_item2": "Introductory pipe routing with CADWorx",
+    "about.card3_item3": "3D modeling of mechanical parts and assemblies with SolidWorks",
+    "about.card2_title": "Full Stack Training (1 Year)",
+    "about.card2_desc": "I completed a one-year intensive <strong>Full Stack web development</strong> course, gaining proficiency in modern frontend, backend and database technologies.",
+    "about.card2_item1": "Frontend: HTML5, CSS3, Sass, JavaScript and React",
+    "about.card2_item2": "Backend: Node.js, Express and RESTful API design",
+    "about.card2_item3": "NoSQL databases: MongoDB &amp; data modeling",
+    "skills.tag": "Expertise",
+    "skills.title": "Skills and Technologies",
+    "skills.cat1_title": "Programming and databases",
+    "skills.cat1_desc": "Knowledge developed during my degree and applied to academic projects involving object-oriented programming, desktop applications and databases.",
+    "skills.cat2_title": "Web development training",
+    "skills.cat2_desc": "I completed a one-year intensive Full Stack development course. I am currently strengthening my programming foundations through my degree.",
+    "skills.cat3_title": "Engineering and CAD design",
+    "skills.cat3_desc": "General arrangement, section and detail drawings for mechanical projects, with organization and attention to detail. Engineering documentation and 3D modeling.",
+    "skills.cat4_title": "Development tools",
+    "skills.cat4_desc": "Tools I use to program, work with databases and manage code for team-based academic projects.",
+    "projects.tag": "Practical portfolio",
+    "projects.title": "Featured Projects",
+    "projects.card1_cat": "Engineering · Surveying and technical documentation",
+    "projects.card1_title": "Scanner survey and piping layout — TGN",
+    "projects.card1_desc": "I took part in an on-site scanner survey for TGN with the team. Using the resulting point cloud, I produced general plan layouts of the site and its piping, preserving the surveyed pipe diameters to document the existing installations.",
+    "projects.card2_cat": "WEB DEVELOPMENT",
+    "projects.card2_title": "Website inspired by an engineering company",
+    "projects.card2_desc": "I developed a website inspired by the engineering company where I work, using my professional environment as a reference to apply my web development knowledge and create my own proposal.",
+    "projects.btn_site": "View website",
+    "contact.tag": "Let’s connect",
+    "contact.title": "Contact",
+    "contact.info_title": "Have a proposal or project in mind?",
+    "contact.info_desc": "I am currently open to professional opportunities in <strong>.NET</strong>, <strong>Full Stack</strong> development or projects related to <strong>engineering and CAD</strong>. Feel free to get in touch to collaborate.",
+    "contact.wa_title": "WhatsApp",
+    "contact.wa_desc": "+54 9 11 1234-5678 (Direct message)",
+    "contact.email_title": "Email",
+    "form.name_label": "Full name *",
+    "form.email_label": "Email address *",
+    "form.subject_label": "Subject *",
+    "form.message_label": "Message *",
+    "form.submit_btn": "Send message",
+    "form.name_placeholder": "Your full name",
+    "form.email_placeholder": "you@example.com",
+    "form.subject_placeholder": "What would you like to discuss?",
+    "form.message_placeholder": "Tell me about your project or question",
+    "footer.copy": "University Technical Degree in Programming — <strong>UTN FRGP</strong> (Programming III).",
+    "footer.bottom": "© 2026 Web Developer. All rights reserved. Optimized for SEO &amp; Accessibility.",
+    "form.validation_error": "Please complete all required fields.",
+    "form.email_error": "Please enter a valid email address.",
+    "form.success_msg": "This form is not yet connected to a delivery service. Please use the contact links.",
+    "seo_title": "Juan Manuel | Web Development & CAD",
+    "seo_desc": "Juan Manuel’s portfolio: programming projects, web development, engineering and CAD.",
+    "extra.69": "Project images coming soon",
+    "extra.70": "Scanner survey",
+    "extra.71": "Point cloud",
+    "extra.72": "Plan layouts",
+    "extra.73": "Piping",
+    "extra.74": "Project images coming soon",
+    "extra.75": "Close ✕"
+  }
 };
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -29,13 +106,23 @@ document.addEventListener("DOMContentLoaded", () => {
   // =========================================================
   // 1. GESTIÓN DEL IDIOMA (i18n: ES / EN)
   // =========================================================
-  let currentLang = "es";
-  // El HTML conserva el contenido actual mientras las traducciones están pendientes.
-  if (langToggle && !TRANSLATIONS.en) {
-    langToggle.disabled = true;
-    langToggle.title = "Traducción al inglés pendiente";
-    langToggle.setAttribute("aria-label", "Traducción al inglés pendiente");
-  }
+  // Español: se captura del HTML para respetar el contenido editado.
+  TRANSLATIONS.es = {};
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    TRANSLATIONS.es[el.dataset.i18n] = el.innerHTML;
+  });
+  document.querySelectorAll("[data-i18n-placeholder]").forEach(el => {
+    TRANSLATIONS.es[el.dataset.i18nPlaceholder] = el.placeholder;
+  });
+  TRANSLATIONS.es.seo_title = document.title;
+  TRANSLATIONS.es.seo_desc = document.querySelector('meta[name="description"]').content;
+  const translatedAttributes = [];
+  document.querySelectorAll("[aria-label], [alt], [title]").forEach(el => {
+    ["aria-label", "alt", "title"].forEach(attr => {
+      if (el.hasAttribute(attr)) translatedAttributes.push([el, attr, el.getAttribute(attr)]);
+    });
+  });
+  let currentLang = readPreference("portfolio-lang") === "en" ? "en" : "es";
   applyLanguage(currentLang);
 
   if (langToggle) {
@@ -50,6 +137,13 @@ document.addEventListener("DOMContentLoaded", () => {
     savePreference("portfolio-lang", lang);
 
     const dict = TRANSLATIONS[lang] || TRANSLATIONS.es || {};
+    const attributeTranslations = {"Volver al inicio del portfolio": "Back to portfolio home", "Navegación principal del sitio": "Main navigation", "Abrir menú de navegación": "Open navigation menu", "Presentación y bienvenida": "Introduction and welcome", "Ver lista de proyectos desarrollados": "View featured projects", "Ir al formulario de contacto": "Go to contact form", "Imágenes del proyecto 1": "Project 1 images", "Ampliar imagen": "Enlarge image", "Imagen anterior": "Previous image", "Elegir imagen": "Choose image", "Imagen siguiente": "Next image", "Imágenes del proyecto 2": "Project 2 images", "Diseño Web Escritorio": "Desktop web design", "Diseño Web Móvil": "Mobile web design", "Visitar el sitio web publicado en GitHub Pages": "Visit the website hosted on GitHub Pages", "Volver arriba": "Back to top", "Enlaces rápidos del pie de página": "Footer quick links", "Imagen ampliada del proyecto": "Enlarged project image", "Cerrar imagen": "Close image", "Foto de perfil de Juan Manuel": "Profile photo of Juan Manuel", "Layout Digitalizado": "Digitized layout", "Imagen Satelital": "Satellite image", "Tecnologías de backend": "Backend technologies", "Tecnologías de frontend": "Frontend technologies", "Herramientas de ingeniería y CAD": "Engineering and CAD tools", "Herramientas de trabajo": "Work tools", "Cambiar entre tema Arcane y Joker": "Switch between Arcane and Joker themes", "Visitar el perfil y repositorios en GitHub (abre en pestaña nueva)": "Visit my GitHub profile and repositories (opens in a new tab)", "Enviar un mensaje directo de WhatsApp (abre en pestaña nueva)": "Send a WhatsApp message (opens in a new tab)", "Enviar un correo electrónico a contacto.programador@ejemplo.com": "Send an email to contacto.programador@ejemplo.com", "Ver el perfil de GitHub del desarrollador (abre en pestaña nueva)": "View the developer’s GitHub profile (opens in a new tab)", "Ver el perfil profesional en LinkedIn (abre en pestaña nueva)": "View professional profile on LinkedIn (opens in a new tab)", "Ver proyectos en GitHub (abre en pestaña nueva)": "View projects on GitHub (opens in a new tab)"};
+    translatedAttributes.forEach(([el, attr, spanish]) => {
+      el.setAttribute(attr, lang === "en" ? (attributeTranslations[spanish] || spanish) : spanish);
+    });
+    if (formFeedback) { formFeedback.textContent = ""; formFeedback.className = "form-feedback"; }
+
+
 
     // Actualizar etiquetas del botón de idioma
     if (langCurrentLabel && langTargetLabel) {
@@ -63,6 +157,8 @@ document.addEventListener("DOMContentLoaded", () => {
         langToggle.setAttribute("aria-label", "Cambiar idioma a Español / Switch to Spanish");
       }
     }
+
+    updateThemeLabel();
 
     // Actualizar título y descripción SEO
     const seoTitle = document.getElementById("seo-title");
@@ -107,10 +203,22 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // Comunicar el estado actual y la acción también al cambiar de idioma.
+  function updateThemeLabel() {
+    if (!themeToggle) return;
+    const active = root.getAttribute("data-theme") === "joker" ? "Dark Knight" : "Arcane";
+    const next = active === "Arcane" ? "Dark Knight" : "Arcane";
+    const label = root.lang === "en"
+      ? "Active theme: " + active + ". Switch to " + next
+      : "Tema activo: " + active + ". Cambiar a " + next;
+    themeToggle.setAttribute("aria-label", label);
+    themeToggle.title = label;
+  }
+
   function setTheme(theme) {
     theme = theme === "joker" ? "joker" : "arcane";
     root.setAttribute("data-theme", theme);
-    if (themeToggle) themeToggle.setAttribute("aria-label", theme === "arcane" ? "Activar tema Joker" : "Activar tema Arcane");
+    updateThemeLabel();
     savePreference("portfolio-theme", theme);
   }
 
@@ -223,12 +331,7 @@ document.addEventListener("DOMContentLoaded", () => {
     controls.hidden = slides.length < 2;
     if (!slides.length) return;
     let current = 0;
-    const dots = slides.map((slide, index) => {
-      const dot = document.createElement("button");
-      dot.type = "button";
-      dot.setAttribute("aria-label", "Ver imagen " + (index + 1));
-      dot.addEventListener("click", () => show(index));
-      gallery.querySelector(".gallery-dots").append(dot);
+    slides.forEach((slide, index) => {
       const button = slide.querySelector(".gallery-image-button");
       button.addEventListener("click", () => {
         const img = slide.querySelector("img");
@@ -238,15 +341,12 @@ document.addEventListener("DOMContentLoaded", () => {
         dialog.querySelector("p").textContent = slide.querySelector("figcaption")?.textContent || img.alt;
         dialog.showModal();
       });
-      return dot;
     });
     function show(index) {
       current = (index + slides.length) % slides.length;
       slides.forEach((slide, i) => {
         slide.hidden = i !== current;
-        dots[i].setAttribute("aria-current", String(i === current));
       });
-      gallery.querySelector(".gallery-count").textContent = (current + 1) + " / " + slides.length;
     }
     gallery.querySelector("[data-prev]").addEventListener("click", () => show(current - 1));
     gallery.querySelector("[data-next]").addEventListener("click", () => show(current + 1));
